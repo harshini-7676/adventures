@@ -32,6 +32,15 @@ export default {
           glow: '#a7f3d0',
           coral: '#fb7185',
         },
+        magma: {
+          amber: '#fbbf24',
+          orange: '#f97316',
+          ember: '#dc2626',
+          lava: '#7c2d12',
+          core: '#fef3c7',
+          glow: '#fde68a',
+          crust: '#78350f',
+        },
       },
       boxShadow: {
         glow: '0 0 40px -10px rgba(34, 211, 238, 0.45)',
@@ -39,6 +48,9 @@ export default {
         'glow-rose': '0 0 50px -10px rgba(251, 113, 133, 0.5)',
         'glow-bio': '0 0 50px -10px rgba(52, 211, 153, 0.5)',
         'glow-teal': '0 0 40px -10px rgba(20, 184, 166, 0.45)',
+        'glow-magma': '0 0 50px -10px rgba(249, 115, 22, 0.5)',
+        'glow-amber': '0 0 40px -10px rgba(251, 191, 36, 0.45)',
+        'glow-core': '0 0 80px -15px rgba(254, 243, 199, 0.6)',
       },
       keyframes: {
         float: {
@@ -78,6 +90,22 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-6px)' },
         },
+        flicker: {
+          '0%, 100%': { opacity: '0.6', filter: 'brightness(1)' },
+          '25%': { opacity: '0.9', filter: 'brightness(1.3)' },
+          '50%': { opacity: '0.5', filter: 'brightness(0.9)' },
+          '75%': { opacity: '0.85', filter: 'brightness(1.2)' },
+        },
+        rumble: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '25%': { transform: 'translate(1px, -1px)' },
+          '50%': { transform: 'translate(-1px, 1px)' },
+          '75%': { transform: 'translate(1px, 1px)' },
+        },
+        'ember-rise': {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '0.8' },
+          '100%': { transform: 'translateY(-40px) scale(0.3)', opacity: '0' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
@@ -89,6 +117,9 @@ export default {
         sway: 'sway 5s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         wave: 'wave 4s ease-in-out infinite',
+        flicker: 'flicker 2s ease-in-out infinite',
+        rumble: 'rumble 0.3s ease-in-out infinite',
+        'ember-rise': 'ember-rise 3s ease-out infinite',
       },
     },
   },

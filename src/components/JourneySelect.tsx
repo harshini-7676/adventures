@@ -1,7 +1,7 @@
-import { Rocket, Waves, ChevronRight, Sparkles, Globe } from 'lucide-react';
+import { Rocket, Waves, Mountain, ChevronRight, Sparkles, Globe } from 'lucide-react';
 
 interface JourneySelectProps {
-  onSelect: (journey: 'space' | 'ocean') => void;
+  onSelect: (journey: 'space' | 'ocean' | 'earth') => void;
 }
 
 export function JourneySelect({ onSelect }: JourneySelectProps) {
@@ -11,27 +11,28 @@ export function JourneySelect({ onSelect }: JourneySelectProps) {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-8 animate-fade-up">
           <Globe className="w-3.5 h-3.5 text-nebula-cyan" />
           <span className="font-mono text-xs tracking-widest text-nebula-cyan/90 uppercase">
-            Two Mysteries of Earth
+            Three Mysteries of Earth
           </span>
         </div>
 
         <h1 className="font-display text-5xl md:text-7xl font-bold leading-[1.05] mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <span className="text-gradient from-white via-nebula-cyan to-abyss-bio glow-text">
+          <span className="text-gradient from-white via-nebula-cyan to-magma-amber glow-text">
             Choose Your Journey
           </span>
         </h1>
 
         <p className="font-body text-lg md:text-xl text-slate-300/80 leading-relaxed max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.25s' }}>
-          Humanity has always looked up at the stars and down into the depths.
-          Both remain largely unexplored. Which frontier will you discover?
+          Humanity has always looked up at the stars, down into the depths, and
+          wondered what lies beneath our feet. Three frontiers remain largely
+          unexplored. Which will you discover?
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 w-full max-w-6xl">
         {/* Space Journey */}
         <button
           onClick={() => onSelect('space')}
-          className="group relative overflow-hidden rounded-3xl glass-strong p-8 md:p-10 text-left transition-all duration-700 hover:scale-[1.02] hover:shadow-glow-lg animate-fade-up"
+          className="group relative overflow-hidden rounded-3xl glass-strong p-6 md:p-8 text-left transition-all duration-700 hover:scale-[1.02] hover:shadow-glow-lg animate-fade-up"
           style={{ animationDelay: '0.4s' }}
         >
           {/* Cosmic gradient backdrop */}
@@ -51,10 +52,10 @@ export function JourneySelect({ onSelect }: JourneySelectProps) {
               </span>
             </div>
 
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
               Space Exploration
             </h2>
-            <p className="font-body text-slate-300/70 leading-relaxed mb-8">
+            <p className="font-body text-sm text-slate-300/70 leading-relaxed mb-8">
               Travel from Earth through the solar system, past gas giants and
               into the glowing nebulae where stars are born. A cinematic voyage
               across the cosmos.
@@ -81,7 +82,7 @@ export function JourneySelect({ onSelect }: JourneySelectProps) {
         {/* Ocean Journey */}
         <button
           onClick={() => onSelect('ocean')}
-          className="group relative overflow-hidden rounded-3xl glass-strong p-8 md:p-10 text-left transition-all duration-700 hover:scale-[1.02] hover:shadow-glow-bio animate-fade-up"
+          className="group relative overflow-hidden rounded-3xl glass-strong p-6 md:p-8 text-left transition-all duration-700 hover:scale-[1.02] hover:shadow-glow-bio animate-fade-up"
           style={{ animationDelay: '0.55s' }}
         >
           {/* Ocean gradient backdrop */}
@@ -101,10 +102,10 @@ export function JourneySelect({ onSelect }: JourneySelectProps) {
               </span>
             </div>
 
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
               Deep Ocean Exploration
             </h2>
-            <p className="font-body text-slate-300/70 leading-relaxed mb-8">
+            <p className="font-body text-sm text-slate-300/70 leading-relaxed mb-8">
               Descend from the sunlit surface through twilight and midnight
               zones into the abyssal depths. Encounter bioluminescent creatures
               and alien ecosystems hidden in the dark.
@@ -125,6 +126,55 @@ export function JourneySelect({ onSelect }: JourneySelectProps) {
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-abyss-bio to-transparent opacity-50" />
+        </button>
+
+        {/* Earth Interior Journey */}
+        <button
+          onClick={() => onSelect('earth')}
+          className="group relative overflow-hidden rounded-3xl glass-strong p-6 md:p-8 text-left transition-all duration-700 hover:scale-[1.02] hover:shadow-glow-magma animate-fade-up"
+          style={{ animationDelay: '0.7s' }}
+        >
+          {/* Magma gradient backdrop */}
+          <div className="absolute inset-0 opacity-30 transition-opacity duration-700 group-hover:opacity-50">
+            <div className="absolute inset-0 bg-gradient-to-br from-magma-crust via-magma-lava to-void-950" />
+            <div className="absolute top-0 right-0 w-60 h-60 rounded-full blur-3xl bg-magma-orange/20" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full blur-3xl bg-magma-amber/15" />
+          </div>
+
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-8">
+              <div className="w-16 h-16 rounded-2xl glass flex items-center justify-center">
+                <Mountain className="w-8 h-8 text-magma-amber group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <span className="font-mono text-[10px] tracking-[0.3em] text-slate-500 uppercase">
+                03
+              </span>
+            </div>
+
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+              Journey Inside Earth
+            </h2>
+            <p className="font-body text-sm text-slate-300/70 leading-relaxed mb-8">
+              Descend through caves and crystals, past flowing mantle and
+              molten iron, to the glowing solid heart of our planet. Explore
+              the world beneath our feet.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {['Caves', 'Magma', 'Earth\'s Core'].map((tag) => (
+                <span key={tag} className="px-3 py-1 rounded-full glass font-mono text-[10px] tracking-wider text-magma-amber uppercase">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 text-magma-amber group-hover:text-white transition-colors">
+              <span className="font-mono text-sm tracking-wider uppercase">Begin Descent</span>
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
+            </div>
+          </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-magma-amber to-transparent opacity-50" />
         </button>
       </div>
 
